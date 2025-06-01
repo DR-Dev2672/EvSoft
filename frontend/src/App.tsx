@@ -1,12 +1,19 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+
+import Layout from "./layout/Layout"
+
 
 function App() {
- 
+  
 
   return (
     <>
-      <div className='bg-green-500 mx-auto text-white'>
-        <h1>hello this is new type of vite apppppppp</h1>
-        </div>
+      <BrowserRouter>
+        <Routes> 
+          <Route path="/" element={<Layout/>}/> 
+           
+        </Routes>
+        </BrowserRouter>
     </>
   )
 }
