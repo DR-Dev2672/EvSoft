@@ -6,13 +6,23 @@ const PORT =8000;
 import "dotenv/config";
 import path from "path";
 import userRoutes from "./routes/user.route";
-import e from "express";
+import cookieParser from "cookie-parser";
+
 
 
 
 //database connection
-mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string)
-console.log("Database connected successfully");
+const dbconnect =async()=>{
+    try {
+        await mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string );
+        console.log("Database connected successfully");
+    } catch (error) {
+        console.error("Database connection failed:", error);
+        
+    }
+}
+
+
 
 
 
@@ -29,7 +39,7 @@ app.get("/",(req:Request,res:Response)=>{
 
 //routes
 
-// app.use("/api/users",userRoutes);
+app.use("/api/users",userRoutes);
 
 
 
@@ -37,6 +47,7 @@ app.get("/",(req:Request,res:Response)=>{
 
 
 app.listen(PORT,()=>{
+    dbconnect();
     console.log(`Server is running on port ${PORT}`);
 })
 
