@@ -52,6 +52,7 @@ router.post(
 
 router.get("/", verifyToken, async (req: Request, res: Response) => {
   try {
+    
     const station = await Station.find({ userId: req.userId });
     res.json(station);
   } catch (error) {
