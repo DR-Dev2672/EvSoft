@@ -31,3 +31,6 @@ const stationSchema =new mongoose.Schema<StationType>({
         enum:["Type1","Type2","CCS","CHAdeMO"]
     }   
 })
+
+const Station = mongoose.model<StationType>("Station", stationSchema);
+export default Station;
