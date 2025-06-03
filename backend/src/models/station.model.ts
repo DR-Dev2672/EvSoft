@@ -2,6 +2,10 @@ import mongoose from "mongoose";
 import { StationType } from "../shared/types";
 
 const stationSchema =new mongoose.Schema<StationType>({
+ userId: {
+    type: String,
+     required: true
+    },
  name:{
     type:String,
     required:true,
