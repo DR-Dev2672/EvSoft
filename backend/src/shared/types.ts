@@ -7,15 +7,18 @@ export type UserType={
 }
 
 export type StationType={
-    id:string,
+    _id:string,
     name:string,
-    location:{
-        latitude:number,
-        longitude:number
-    },
+    userId: string,
     status:string,
     powerOutput:number,
     connectorType:string,
+    lastUpdated: Date,
+    location:{
+        latitude:number,
+        longitude:number,
+    }
+   
 
 
 }
