@@ -11,7 +11,7 @@ import {check,validationResult} from "express-validator";
 
 const router=express.Router();
 
-router.get("/me",async (req:Request,res:Response)=>{
+router.get("/me",verifyToken,async (req:Request,res:Response)=>{
    const userId=req.userId;
 
   try {
@@ -34,7 +34,7 @@ router.post("/register", [
    check("lastName","Last Name is required").isString(),
    check("email","Email is required").isEmail(),
    check("password","Password with 6 or more characters required").isLength({min:6}),
-],async (req:any, res:any) =>{
+],async (req:Request, res:Response) =>{
 
    const errors=validationResult(req);
    if(!errors.isEmpty()){
