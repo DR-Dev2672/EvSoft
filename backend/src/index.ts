@@ -3,14 +3,18 @@ import cors from "cors";
 import mongoose from "mongoose";
 const app=express();
 const PORT =8000;
+
 import "dotenv/config";
 import path from "path";
 import userRoutes from "./routes/user.route";
+import authRoutes from "./routes/auth.route";
+import myStationsRoutes from "./routes/my-stations.route";
 import cookieParser from "cookie-parser";
 
 
 
 
+app.use(cookieParser())
 //database connection
 const dbconnect =async()=>{
     try {
@@ -27,9 +31,16 @@ const dbconnect =async()=>{
 
 
 //uses
+
 app.use(express.json());
-app.use(cors());
 app.use(express.urlencoded({extended:true}))
+app.use(cors(
+    {
+        origin: process.env.FRONTEND_URL,
+        credentials: true, //allows cookies to be sent with requests
+    }
+));
+
 
 app.get("/",(req:Request,res:Response)=>{
     res.status(200).json({
@@ -40,6 +51,8 @@ app.get("/",(req:Request,res:Response)=>{
 //routes
 
 app.use("/api/users",userRoutes);
+app.use("/api/auth",authRoutes);
+app.use("/api/my-stations",myStationsRoutes);
 
 
 
