@@ -9,6 +9,7 @@ import path from "path";
 import userRoutes from "./routes/user.route";
 import authRoutes from "./routes/auth.route";
 import myStationsRoutes from "./routes/my-stations.route";
+import stationRoutes from "./routes/stations.route";
 import cookieParser from "cookie-parser";
 
 
@@ -53,6 +54,7 @@ app.get("/",(req:Request,res:Response)=>{
 app.use("/api/users",userRoutes);
 app.use("/api/auth",authRoutes);
 app.use("/api/my-stations",myStationsRoutes);
+app.use("/api/stations",stationRoutes)
 
 
 
