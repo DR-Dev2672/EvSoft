@@ -36,5 +36,9 @@ const stationSchema =new mongoose.Schema<StationType>({
     }   
 })
 
+// stationSchema.pre("save", async function (next) {
+//   next();
+// });
+
 const Station = mongoose.model<StationType>("Station", stationSchema);
 export default Station;
