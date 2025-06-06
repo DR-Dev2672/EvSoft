@@ -95,3 +95,30 @@ export const fetchStationById = async (stationId: string): Promise<StationType> 
 
   return response.json();
 };
+
+export const fetchMyStations = async (): Promise<StationType[]> => {
+  const response = await fetch(`${API_BASE_URL}/api/my-stations`, {
+    credentials: "include",
+  });
+
+  if (!response.ok) {
+    throw new Error("Error fetching stations");
+  }
+
+  return response.json();
+};
+
+export const validateToken = async () => {
+  const response = await fetch(`${API_BASE_URL}/api/auth/validate-token`, {
+    credentials: "include",
+    
+    
+  });
+  
+  if (!response.ok) {
+    throw new Error("Token invalid");
+  }
+
+  return response.json();
+  
+};
