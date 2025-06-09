@@ -41,7 +41,7 @@ function MyComponent() {
     setMap(map)
   }, [map])
 
-  const onUnmount = React.useCallback(function callback(map:any) {
+  const onUnmount = React.useCallback(function callback() {
     setMap(null)
   }, [])
 
