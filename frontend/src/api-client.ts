@@ -1,5 +1,5 @@
 
-import type { StationType } from "../../backend/src/shared/types";
+import type { StationType ,StationSearchResponse} from "../../backend/src/shared/types";
 import type { StationFormData } from "./pages/AddStation";
 import type { RegisterFormData } from "./pages/Register";
 import type { SignInFormData } from "./pages/SignIn";
@@ -122,3 +122,27 @@ export const validateToken = async () => {
   return response.json();
   
 };
+
+export type SearchParams={
+  status?:string;
+  connectorType?:string;
+  powerOutput?:string;
+}
+
+export const searchStations=async(searchParams:SearchParams):Promise<StationSearchResponse>=>{
+  const queryParams=new URLSearchParams();
+  queryParams.append("status",searchParams.status||"");
+  queryParams.append("connectorType",searchParams.connectorType||"");
+  queryParams.append("powerOutput",searchParams.powerOutput||"");
+  
+
+
+
+  const response=await fetch(`${API_BASE_URL}/api/stations/search?${queryParams}`)
+
+  if(!response.ok){
+    throw new Error('Error fetching stations')
+  }
+
+  return response.json();
+}
