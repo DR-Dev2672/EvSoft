@@ -31,6 +31,7 @@ function MyComponent() {
   })
 
   const [map, setMap] = React.useState<any>(null)
+  
 
   const onLoad = React.useCallback(function callback(map:any) {
     // This is just an example of getting and using the map instance!!! don't just blindly copy!
@@ -38,7 +39,7 @@ function MyComponent() {
     map.fitBounds(bounds)
 
     setMap(map)
-  }, [])
+  }, [map])
 
   const onUnmount = React.useCallback(function callback(map:any) {
     setMap(null)
