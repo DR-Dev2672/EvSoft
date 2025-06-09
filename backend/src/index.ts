@@ -43,7 +43,7 @@ app.use(cors(
 ));
 
 
-app.get("/",(req:Request,res:Response)=>{
+app.get("/api/test",(req:Request,res:Response)=>{
     res.status(200).json({
         message:"hiii from server side"
     })
