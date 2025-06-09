@@ -41,6 +41,7 @@ app.use(cors(
         credentials: true, //allows cookies to be sent with requests
     }
 ));
+app.use(express.static(path.join(__dirname,"../../frontend/dist")));
 
 
 app.get("/api/test",(req:Request,res:Response)=>{
