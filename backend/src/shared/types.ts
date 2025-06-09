@@ -22,3 +22,13 @@ export type StationType={
 
 
 }
+
+
+export type StationSearchResponse={
+    data: StationType[],
+  pagination: {
+    total: number,
+    page: number,
+    pages: number;
+  }
+}
