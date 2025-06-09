@@ -16,7 +16,7 @@ type Props = {
               checked={selectedConnector.includes(connector)}
               onChange={onChange}
             />
-            <span>{connector} Stars</span>
+            <span>{connector} Stations</span>
           </label>
         ))}
       </div>
