@@ -8,10 +8,10 @@ const Header = () => {
   
   const {isLoggedIn}=useAppContext()
   return (
-    <div className="bg-gray-700 py-6">
+    <div className="bg-gray-800 text-white  py-6">
       <div className="container mx-auto flex justify-between">
         <span className="text-3xl text-white font-bold tracking-tight">
-          <Link to="/">Evoltsoft.com</Link>
+          <Link to="/" className="text-3xl font-bold text-blue-400">⚡ EvSoft.com</Link>
         </span>
         <span className="flex space-x-2">
         <Link
