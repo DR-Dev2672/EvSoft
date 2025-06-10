@@ -23,3 +23,38 @@ A full-stack web application that helps electric vehicle users locate nearby cha
 
 🖼️ Responsive and clean UI built with React and Tailwind CSS (or your choice of styling).
 
+
+
+| Tech                    | Description                             |
+| ----------------------- | --------------------------------------- |
+| MongoDB                 | NoSQL database for storing station data |
+| Express.js              | Backend server and REST API             |
+| React.js                | Frontend SPA                            |
+| Node.js                 | Runtime environment                     |
+| Google Maps API         | Map rendering and geolocation features  |
+| Mongoose                | MongoDB ODM for schema definitions      |
+| JWT                     | Secure authentication mechanism         |
+| Tailwind CSS            | Modern utility-first CSS                |
+
+
+Project Structure
+
+/frontend           => React frontend
+  /components     => Reusable UI components
+  /pages          => Pages like Home, AddStation, Login,Resgister,Details
+  /api-client            => api calls
+  .env              => API keys and environment variables for frontend
+/baceken           => Express backend
+  /routes         => API routes for stations, auth
+  /models         => Mongoose models (e.g., Station.models.ts, User.models.ts)
+  /middlewares    => Authentication
+  /shared         => types 
+.env              => API keys and environment variables for backend
+
+
+
+
+
+
+
+
