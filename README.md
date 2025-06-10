@@ -36,16 +36,7 @@ A full-stack web application that helps electric vehicle users locate nearby cha
 | JWT                     | Secure authentication mechanism         |
 | Tailwind CSS            | Modern utility-first CSS                |
 
-/client           => React frontend
-  /components     => Reusable UI components
-  /pages          => Pages like Home, AddStation, Login
-  /api            => Axios calls to backend
-/server           => Express backend
-  /routes         => API routes for stations, auth
-  /models         => Mongoose models (e.g., Station.js, User.js)
-  /controllers    => Request handlers for routes
-  /config         => DB and API key configs
-.env              => API keys and environment variables
+
 
 Project Structure
 
