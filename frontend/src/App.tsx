@@ -12,7 +12,7 @@ import Details from "./pages/Details";
 // import { useParams } from 'react-router-dom';
 import Map from "./pages/Map";
 import { useAppContext } from "./context/AppContext";
-import Search from "./pages/Search";
+// import Search from "./pages/Search";
 
 
 function App() {
@@ -51,13 +51,13 @@ function App() {
             </Layout>
             }
           /> 
-          <Route path="/search"
+          {/* <Route path="/search"
            element={
             <Layout>
               <Search />
             </Layout>
             }
-          /> 
+          />  */}
           {isLoggedIn && 
           <>
           <Route path="/add-station"
