@@ -5,9 +5,10 @@ import { useQuery } from 'react-query'
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api'
 const API_KEY=import.meta.env.VITE_API_G_P 
 
+
 const containerStyle = {
-  width:' 900px',
-  height: '400px',
+  width: '100%',
+  height: 'clamp(300px, 70vh, 500px)',
 }
 
 
@@ -33,23 +34,28 @@ function MyComponent() {
   const [map, setMap] = React.useState<any>(null)
   
 
-  const onLoad = React.useCallback(function callback(map:any) {
-    // This is just an example of getting and using the map instance!!! don't just blindly copy!
-    const bounds = new window.google.maps.LatLngBounds(center)
-    map.fitBounds(bounds)
-
+  const onLoad = React.useCallback(function callback(map: any) {
+    // Fit all station markers within bounds
+    if (points && points.length > 0) {
+      const bounds = new window.google.maps.LatLngBounds()
+      points.forEach(point => {
+        bounds.extend(point)
+      })
+      map.fitBounds(bounds, 50) // 50px padding around markers
+    }
     setMap(map)
-  }, [map])
+  }, [points])
 
   const onUnmount = React.useCallback(function callback() {
     setMap(null)
   }, [])
 
   return isLoaded ? (
+    <div className='w-full '>
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={center}
-      zoom={10}
+      zoom={5}
       onLoad={onLoad}
       onUnmount={onUnmount}
     >
@@ -64,8 +70,10 @@ function MyComponent() {
       ))}
       
     </GoogleMap>
+    </div>
   ) : (
     <></>
+    
   )
 }
 

@@ -8,44 +8,39 @@ const Header = () => {
   
   const {isLoggedIn}=useAppContext()
   return (
-    <div className="bg-gray-800 text-white  py-6">
-      <div className="container mx-auto flex justify-between">
-        <span className="text-3xl text-white font-bold tracking-tight">
-          <Link to="/" className="text-3xl font-bold text-blue-400">⚡ EvSoft.com</Link>
+    <div className="bg-gray-800 text-white  p-6 ">
+      <div className="container mx-auto flex flex-col gap-4 items-center justify-between px-4 sm:flex-row sm:px-6">
+        <span className="text-3xl font-bold tracking-tight text-white">
+          <Link to="/" className="text-3xl font-bold text-blue-400">
+            ⚡ EvSoft.com
+          </Link>
         </span>
-        <span className="flex space-x-2">
-        <Link
-                className="flex items-center text-white px-3 font-bold hover:bg-blue-600"
-                to="/map"
-              >
-                Map
-              </Link>
-              {isLoggedIn ? ( 
-                <>
+        <nav className="flex flex-wrap items-center justify-center gap-2 sm:justify-end">
+          <Link
+            className="flex items-center rounded-2xl px-3 py-2 text-white font-bold transition hover:bg-blue-600"
+            to="/map"
+          >
+            Map
+          </Link>
+          {isLoggedIn ? (
+            <>
               <Link
-                className="flex items-center text-white px-3 font-bold hover:bg-blue-600"
+                className="flex items-center rounded-2xl px-3 py-2 text-white font-bold transition hover:bg-blue-600"
                 to="/my-stations"
               >
                 My Stations
               </Link>
-              <SignOutButton/>
-              </>
-              ):(
-              
-          
-         
-              <Link
+              <SignOutButton />
+            </>
+          ) : (
+            <Link
               to="/sign-in"
-              className="flex bg-white items-center text-blue-600 px-3 font-bold hover:bg-gray-100"
+              className="flex items-center rounded-2xl bg-white px-3 py-2 text-blue-600 font-bold transition hover:bg-gray-100"
             >
               Sign In
             </Link>
-
-              )
-              
-              }
-
-            </span>
+          )}
+        </nav>
       </div>
     </div>
   );
