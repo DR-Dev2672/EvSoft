@@ -34,7 +34,9 @@ const Home = () => {
           ))}
         </div>
       </div>
-    <div className=""><Map/></div>
+    <div className="w-full">
+      <Map/>
+      </div>
     </div>
       
     </>

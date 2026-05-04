@@ -58,6 +58,13 @@ function App() {
             </Layout>
             }
           />  */}
+          <Route path="/detail/:stationId"
+           element={
+            <Layout>
+              <Details/>
+            </Layout>
+            }
+          /> 
           {isLoggedIn && 
           <>
           <Route path="/add-station"

@@ -8,7 +8,7 @@ const API_KEY=import.meta.env.VITE_API_G_P
 
 const containerStyle = {
   width: '100%',
-  height: 'clamp(300px, 70vh, 500px)',
+  height: 'clamp(300px, 70vh, 300px)',
 }
 
 
