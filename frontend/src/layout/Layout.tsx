@@ -16,7 +16,7 @@ function Layout({children}:Props) {
         <Hero/>
         <div className="container mx-auto">
       </div>
-        <div className='containe mx-auto flex-1 py-10'>{children}</div>
+        <div className='container x-auto flex-1 py-10'>{children}</div>
         <Footer/>
     </div>
   )

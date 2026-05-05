@@ -9,9 +9,9 @@ const LatestDestinationCard = ({ station }: Props) => {
   return (
     <Link
       to={`/detail/${station._id}`}
-      className="relative cursor-pointer overflow-hidden rounded-md"
+      className="relative cursor-pointer overflow-hidden rounded-md w-50 bg-gray-200 p-4 text-center"
     >
-      <div className="flex flex-col items-center justify-center h-full bg-gray-200 p-4">
+      <div className="flex flex-col items-center justify-center h-full w-full bg-gray-200 p-4">
      <div className="font-bold">{station.name}</div>
      <div className="italic">{station.status}</div>
      <div>{station.connectorType}</div>

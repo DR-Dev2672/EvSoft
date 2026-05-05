@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import * as apiClient from "../api-client";
 import Card from "../components/Card";
-import Map from "./Map"
+import {Map} from "./Map"
 
 
 
@@ -18,19 +18,21 @@ const Home = () => {
 
   return (
     <>
-    <h2 className="text-3xl font-bold text-center">Spot your stations</h2>
-      <p className="text-center">Find it according to your choice</p>
-    <div className="space-y-3 flex flex-row items-center justify-between gap-16"  >
+    <div className="py-6">
+    <h2 className="text-4xl font-bold text-center">Spot your stations</h2>
+      <p className="text-center text-xl italic">Find it according to your choice</p>
+    </div>
+    <div className="space-y-3 grid grid-cols-1 md:grid-cols-2 items-center justify-between gap-16 "  >
       
       <div className="grid gap-4 ">
-        <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
+        <div className="grid md:grid-cols-3 grid-cols-2 gap-4">
           {topRowStations.map((station) => (
             <Card station={station} />
           ))}
         </div>
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-3 grid-cols-2 gap-4">
           {bottomRowStations.map((station) => (
-            <Card station={station} />
+            <Card station={station}  />
           ))}
         </div>
       </div>

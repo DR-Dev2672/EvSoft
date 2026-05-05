@@ -14,7 +14,7 @@ const containerStyle = {
 
 
 
-function MyComponent() {
+export const  Map=()=> {
    const { data: stations } = useQuery("fetchQuery", () =>
       apiClient.fetchStations()
     );
@@ -51,7 +51,8 @@ function MyComponent() {
   }, [])
 
   return isLoaded ? (
-    <div className='w-full '>
+    
+    <div className=''>
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={center}
@@ -77,4 +78,3 @@ function MyComponent() {
   )
 }
 
-export default MyComponent;

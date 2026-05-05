@@ -10,8 +10,8 @@ import AddStation from "./pages/AddStation";
 import MyStations from "./pages/MyStations";
 import Details from "./pages/Details";
 // import { useParams } from 'react-router-dom';
-import Map from "./pages/Map";
 import { useAppContext } from "./context/AppContext";
+import {Map} from "./pages/Map";
 // import Search from "./pages/Search";
 
 
